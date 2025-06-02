@@ -17,7 +17,7 @@ A simple ERC20 token vault that allows users to deposit and withdraw tokens with
 - Stores accumulated fees for admin withdrawal
 - Uses simple percentage-based fee calculation
 
-### MockERC20.sol
+### ERC20.sol
 - Simple ERC20 token implementation for testing
 - Includes basic transfer, approve, and transferFrom functions
 
