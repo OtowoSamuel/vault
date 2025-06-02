@@ -3,14 +3,14 @@ pragma solidity ^0.8.0;
 
 import {Script, console} from "forge-std/Script.sol";
 import {Vault} from "../src/Vault.sol";
-import {MockERC20} from "../src/MockERC20.sol";
+import {ERC20} from "../src/ERC20.sol";
 
 contract VaultDeployScript is Script {
     function run() public {
         vm.startBroadcast();
 
         // Deploy a test token
-        MockERC20 token = new MockERC20(
+        ERC20 token = new ERC20(
             "Test Token",
             "TEST",
             18,

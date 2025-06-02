@@ -39,11 +39,11 @@ contract ERC20 {
     function transferFrom(address from, address to, uint256 amount) public returns (bool) {
         require(balanceOf[from] >= amount, "Insufficient balance");
         require(allowance[from][msg.sender] >= amount, "Insufficient allowance");
-        
+
         balanceOf[from] -= amount;
         balanceOf[to] += amount;
         allowance[from][msg.sender] -= amount;
-        
+
         emit Transfer(from, to, amount);
         return true;
     }
