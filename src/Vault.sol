@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import {IERC20} from "forge-std/interfaces/IERC20.sol";
+import {ERC20} from "./ERC20.sol";
 
 contract Vault {
-    IERC20 public token;
+    ERC20 public token;
     address public admin;
     uint256 public withdrawalFeePercent; // Fee percentage (5%)
 
@@ -20,7 +20,7 @@ contract Vault {
         require(_admin != address(0), "Invalid admin address");
         require(_feePercent <= 10, "Fee too high"); // Max 10%
 
-        token = IERC20(_token);
+        token = ERC20(_token);
         withdrawalFeePercent = _feePercent;
         admin = _admin;
     }
